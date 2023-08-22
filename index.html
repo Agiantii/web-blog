@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            box-sizing: border-box;
+        } */
+        body{
+            display: flex;
+            justify-content: center;
+            /* background-color: black; */
+            /* color: black; */
+        }
+        .panels{
+            display: flex;
+            justify-content: center;
+            width: 90vw;
+            height: 90vh;   
+        }
+    
+        .panel{
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50px;
+            flex: 0.5 1;
+            margin: 10px;
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+        .panel h3{
+            color: brown;
+            opacity: 0;
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            margin: 0;
+            transition: all 1s ease-in-out;
+            /* z-index: 2; */
+        }
+        .panel.active h3{
+            opacity: 1;
+        }
+        .panel.active {
+            flex: 5;
+        }
+    </style>
+</head>
+<body>
+     <nav class="nav">
+        <div class="panels">
+          <div class="panel" style="background-image: url('https://pic1.zhimg.com/v2-53db6d8d5b720d70536b46bf790dcee8_r.jpg');">
+            <h3>Zoro</h3>
+          </div>
+          <div class="panel" style="background-image: url('https://pic3.zhimg.com/80/v2-c19da8de507d46ed86b93e778dbd802e_1440w.webp');">
+            <h3>Luffy</h3>
+          </div>
+          <div class="panel" style="background-image: url('https://pic1.zhimg.com/80/v2-9b0298ab27b3589e48821889e0a48734_1440w.webp')">
+            <h3>Ace</h3>
+          </div>
+          <div class="panel" style="background-image: url('https://picx.zhimg.com/v2-1f85687772c1bddbf320394dc4b62ab3_r.jpg');">
+            <h3>Sabot</h3>
+          </div>
+          <div class="panel" style="background-image: url('https://p1.ssl.qhimg.com/t01aca4f8665d55f3f9.jpg');">
+                <h3>Usopp</h3>
+            </div>
+          <div class="panel" style="background-image: url('https://pic4.zhimg.com/v2-0f51973d5478161c6b3a55a65817a603_r.jpg');">
+            <h3>Sanji</h3>
+          </div>
+        </div>
+     </nav>
+     <script>
+        const panels = document.querySelectorAll('.panel')
+        panels.forEach(element => {
+            element.addEventListener('click',()=>{
+                removeAvtiveClasses()
+                element.classList.add('active')
+            })
+        });
+        function removeAvtiveClasses(){
+            panels.forEach(element => {
+                element.classList.remove('active')
+            });
+        }
+     </script>
+</body>
+</html>
